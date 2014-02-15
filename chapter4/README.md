@@ -14,10 +14,8 @@
 
 ```
 id(1)
-
 foo = 1
 id(foo)
-
 bar = 1
 id(bar)
 ```
@@ -41,34 +39,47 @@ id(foo + bar)
 リスト内包表記についてはあとでまとめる
 
 ```
->>> import copy
->>> foo = [[]] * 3
+import copy
+foo = [[]] * 3
+```
 
->>> [id(v) for v in foo]
+```
+[id(v) for v in foo]
 [4419183248, 4419183248, 4419183248]
->>> id(foo)
-4421519552
+```
 
->>> bar = foo
->>> id(bar)
+```
+id(foo)
 4421519552
+```
 
->>> bar = foo[:]
->>> id(bar)
+```
+bar = foo
+id(bar)
+4421519552
+```
+
+```
+bar = foo[:]
+id(bar)
 4419183608
->>> [id(v) for v in bar]
+[id(v) for v in bar]
 [4419183248, 4419183248, 4419183248]
+```
 
->>> bar = copy.copy(foo)
->>> id(bar)
+```
+bar = copy.copy(foo)
+id(bar)
 4425818912
->>> [id(v) for v in bar]
+[id(v) for v in bar]
 [4419183248, 4419183248, 4419183248]
+```
 
->>> bar = copy.deepcopy(foo)
->>> id(bar)
+```
+bar = copy.deepcopy(foo)
+id(bar)
 4421547216
->>> [id(v) for v in bar]
+[id(v) for v in bar]
 [4421547144, 4421547144, 4421547144]
 ```
 
@@ -77,9 +88,9 @@ id(foo + bar)
 * idからの続きのまま比較すると以下のようになる
 * 他のプログラミング言語と同じ
 
->>> foo == bar
+foo == bar
 True
->>> foo is bar
+foo is bar
 False
 
 ## 条件分岐
@@ -108,10 +119,9 @@ if式として扱えるかはあとでまとめる
 * set(重複のないリストへの変換)
 
 ```
->>> set("aaabc")
+set("aaabc")
 set(['a', 'c', 'b'])
-
->>> set((1,1,1,2,3))
+set((1,1,1,2,3))
 set([1, 2, 3])
 ```
 
@@ -120,10 +130,10 @@ set([1, 2, 3])
 
 文字型は存在しない？
 
-````
->>> type(("aaabc"))
+```
+type(("aaabc"))
 <type 'str'>
->>> type(('a'))
+type(('a'))
 <type 'str'>
 ```
 

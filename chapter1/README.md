@@ -21,33 +21,30 @@
 * これはpython3ではデフォルトらしいので、互換性問題に少し納得をした
 
 ```
->>> 1/3
+1/3
 0
-
->>> 1/3.0
+1/3.0
 0.3333333333333333
-
->>> from __future__ import division
->>> 1/3
+from __future__ import division
+1/3
 0.3333333333333333
-````
+```
 
 ### import nltk.book と from nltk import * は違う？
 
 ```
->>> import nltk.book
->>> nltk.book.text1
+import nltk.book
+nltk.book.text1
 <Text: Moby Dick by Herman Melville 1851>
-
->>> text1
+text1
 Traceback (most recent call last):
   File "<console>", line 1, in <module>
 NameError: name 'text1' is not defined
 ```
 
 ```
->>> from nltk import *
->>> text1
+from nltk import *
+text1
 <Text: Moby Dick by Herman Melville 1851>
 ```
 
@@ -66,10 +63,9 @@ NameError: name 'text1' is not defined
 * 補完時に引数名objectと出ていた
 
 ```
->>> len(text3)
+len(text3)
 44764
-
->>> len("abcdefg")
+len("abcdefg")
 7
 ```
 
@@ -79,14 +75,12 @@ NameError: name 'text1' is not defined
 * classに対する型はtypeなので、メタな感じがする
 
 ```
->>> type(text3)
+type(text3)
 <class 'nltk.text.Text'>
-
->>> type("abcdefg")
+type("abcdefg")
 <type 'str'>
-
->>> import nltk.text
->>> type(nltk.text.Text)
+import nltk.text
+type(nltk.text.Text)
 <type 'type'>
 ```
 
@@ -99,10 +93,9 @@ NameError: name 'text1' is not defined
 
 
 ```
->>> text3.count("smote")
+text3.count("smote")
 5
-
->>> "abcdefg".count("bc")
+"abcdefg".count("bc")
 1
 ```
 
@@ -113,15 +106,12 @@ NameError: name 'text1' is not defined
 * static扱いがあるのか疑問が残った
 
 ```
->>> type(len)
+type(len)
 <type 'builtin_function_or_method'>
-
->>> type(text3.count)
+type(text3.count)
 <type 'instancemethod'>
-
->>> type("abcdefg".count)
+type("abcdefg".count)
 <type 'builtin_function_or_method'>
-
 ```
 
 ### 関数定義
@@ -130,8 +120,7 @@ NameError: name 'text1' is not defined
 * 空行を入力すると元の表記に戻る
 
 ```
->>> def lexical_diversity(text):
+def lexical_diversity(text):
 ...     return len(text) / len(set(text))
 ...
->>>
 ```
