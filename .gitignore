@@ -78,4 +78,5 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-
+# python file for ipython
+foripy.py
