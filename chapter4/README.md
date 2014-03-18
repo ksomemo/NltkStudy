@@ -252,3 +252,45 @@ for v in seq:
 * srcだけにファイルを置き、chapter4に置かなかった場合はモジュールへのパスが通っていないとみなされる
 * __init__.py にはモジュール初期化のコードを書くことが出来るらしい
 * モジュールの再読み込みは、import でなくreload(module)で行う
+
+### matplotlib
+
+* グラフ描画に使用する
+* ~/.matplotlib/matplotlibrc に対してユーザー固有の設定を行える
+* プログラムからでも設定できる
+
+以下の設定ファイル記述およびプログラムでの設定をしたときに動かなかった
+
+```
+設定ファイル backend:    MacOSX
+プログラム   matplotlib.use('Agg')
+
+UserWarning:  This call to matplotlib.use() has no effect
+because the backend has already been chosen;
+matplotlib.use() must be called *before* pylab, matplotlib.pyplot,
+or matplotlib.backends is imported for the first time.
+```
+
+* 設定のコメントアウトおよび、プログラム側のコメントアウト解除をするとエラーにはならない
+* ただし、このままでは画像は白１色なのでshowでの表示をやめないと画像ファイルとして保存されない
+
+### networkx
+
+* ネットワークグラフ描画用
+* pygraphviz(Graphvizに依存 ※Pythonではない)に依存している
+
+```
+brew install graphviz
+# => version 2.34.0
+pip install pygraphviz
+pip install networkx
+```
+
+### numpy
+
+* 行列計算などの線形代数用
+* クラスタリング用のパッケージもある
+* 潜在的意味解析(LSA)はSVD(特異値分解)と関係あるらしい(wikiより)
+* ほかにもいろいろなパッケージが存在する
+
+

@@ -30,6 +30,9 @@ from __future__ import division
 0.3333333333333333
 ```
 
+* from __future__ import division はファイルの先頭に書かなければならない
+* 入門自然言語処理は、これを使用している前提なので注意する
+
 ### import nltk.book と from nltk import * は違う？
 
 ```
